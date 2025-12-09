@@ -9,7 +9,7 @@ ssl_cert:                   &ssl_cert                  __SSL_CERT__
 ssl_key:                    &ssl_key                   __SSL_KEY__
 
 applications:
-  ceph-rgw:
+  ceph-radosgw:
     charm: __CHARM_STORE____CHARM_CS_NS____CHARM_CH_PREFIX__ceph-radosgw
     num_units: __NUM_CEPH_RGW_UNITS__
     constraints: mem=1G
@@ -20,5 +20,5 @@ applications:
       ssl_cert: *ssl_cert
       ssl_key: *ssl_key
 relations:
-  - [ ceph-rgw, keystone ]
-  - [ ceph-rgw, __CEPH_INTERFACE__ ]
+  - [ ceph-radosgw, keystone ]
+  - [ ceph-radosgw, __CEPH_INTERFACE__ ]
